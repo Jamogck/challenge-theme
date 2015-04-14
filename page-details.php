@@ -37,6 +37,29 @@ get_header(); ?>
         </ul>
     </nav>
 
+    <section id="about">
+        <div class="section-inner">
+            <div class="detail-node">
+                <div class="single-detail group">
+                    <h3><?php the_field( 'title' ); ?></h3>
+                    <?php the_field( 'about_content' ); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="theme">
+        <div class="section-inner">
+            <h2>Theme</h2>
+            <div class="detail-node">
+                <div class="single-detail group">
+                    <h3><?php the_field( 'theme_title' ); ?></h3>
+                    <?php the_field( 'theme_content' ); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="speakers">
         <div class="section-inner">
             <h2>Speakers &amp; Artists</h2>
@@ -54,9 +77,9 @@ get_header(); ?>
 						?>
 
 						<div class="single-detail group">
-							<div class="detail-img">
-								<img class="circle" src="<?php echo $image; ?>" alt="<?php echo $speaker_name; ?>"/>
-							</div>
+							<!-- <div class="detail-img">
+								<img class="circle" src="<?php //echo $image; alt="<?php //echo $speaker_name; ?>" ?>"/> -->
+							<!-- </div> -->
 							<div class="detail-text">
 						    	<h3><?php echo $speaker_name . " "; ?><a href="http://twitter.com/<?php echo $twitter; ?>"><i class="fa fa-twitter"></i></a></h3>
 						    	
@@ -104,7 +127,8 @@ get_header(); ?>
                                     - Outreach</br>
                                     - Equipping Labs</br>
                                     - Rec Sports </br>
-                                    - Love Moves </br></td>
+                                    - Love Moves </br>
+                                    - Free Time</td>
                                 </tr>
                                 <tr alt="4:45-6:30 p.m.">
                                     <td>4:45-6:30 p.m.</td>
@@ -145,6 +169,45 @@ get_header(); ?>
             <div class="detail-node">
                 <div class="single-detail group">
                     <div class="detail-text">
+                        <h3>Outreach</h3>
+                        <?php the_field('outreach_content'); ?>
+                
+                        <?php if( have_rows('outreach_button') ): ?>
+
+                            <?php while( have_rows('outreach_button') ): the_row();
+                                $button_label = get_sub_field('button_label');
+                                $button_url     = get_sub_field('button_url');
+                            ?>
+
+                            <a class="btn" href="<?php $button_url; ?>"><?php echo $button_label; ?></a>
+
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+                     </div>
+                </div>
+
+
+                <div class="single-detail group">
+                    <div class="detail-text">
+                        <h3>Equipping Labs</h3>
+                        <?php the_field('equipping_labs_content'); ?>
+                
+                        <?php if( have_rows('equipping_labs_button') ): ?>
+
+                            <?php while( have_rows('equipping_labs_button') ): the_row();
+                                $button_label = get_sub_field('button_label');
+                                $button_url     = get_sub_field('button_url');
+                            ?>
+
+                            <a class="btn" href="<?php $button_url; ?>"><?php echo $button_label; ?></a>
+
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+                     </div>
+                </div>
+
+                <div class="single-detail group">
+                    <div class="detail-text">
                         <h3>Rec Sports</h3>
                         <?php the_field('rec_sports_content'); ?>
             	
@@ -162,28 +225,9 @@ get_header(); ?>
 					</div>
 				</div>
 
-                <div class="single-detail group">
-                    <div class="detail-text">
-                        <h3>Outreach</h3>
-                        <?php the_field('outreach_content'); ?>
-            	
-						<?php if( have_rows('outreach_button') ): ?>
-
-							<?php while( have_rows('outreach_button') ): the_row();
-								$button_label = get_sub_field('button_label');
-								$button_url     = get_sub_field('button_url');
-							?>
-
-							<a class="btn" href="<?php $button_url; ?>"><?php echo $button_label; ?></a>
-
-							<?php endwhile; ?>
-							<?php endif; ?>
-					 </div>
-				</div>
-
 				<div class="single-detail group">
                     <div class="detail-text">
-                        <h3>Love Moves</h3>
+                        <h3>Love Moves: Brazil</h3>
                         <?php the_field('love_moves_content'); ?>
             	
 						<?php if( have_rows('love_moves_button') ): ?>
@@ -200,24 +244,6 @@ get_header(); ?>
 					 </div>
 				</div>
 
-				<div class="single-detail group">
-                    <div class="detail-text">
-                        <h3>Equipping Labs</h3>
-                        <?php the_field('equipping_labs_content'); ?>
-            	
-						<?php if( have_rows('equipping_labs_button') ): ?>
-
-							<?php while( have_rows('equipping_labs_button') ): the_row();
-								$button_label = get_sub_field('button_label');
-								$button_url     = get_sub_field('button_url');
-							?>
-
-							<a class="btn" href="<?php $button_url; ?>"><?php echo $button_label; ?></a>
-
-							<?php endwhile; ?>
-							<?php endif; ?>
-					 </div>
-				</div>
 			</div>
 		</div>
 	</section>

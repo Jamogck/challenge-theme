@@ -1,22 +1,8 @@
-/*
-Theme Name: challenge-conference
-Theme URI: http://underscores.me/
-Author: Jordan Mogck
-Author URI: http://Jamogck.com
-Description: A custom theme for the EFCA national youth conference
-Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: challenge-conference-theme
+/*!
+ *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */@font-face{font-family:'FontAwesome';src:url('../fonts/fontawesome-webfont.eot?v=4.3.0');src:url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'),url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}.fa-facebook-official:before{content:"\f230"}.fa-instagram:before{content:"\f16d"}.fa-twitter:before{content:"\f099"}
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-challenge-conference is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-*/
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -117,7 +103,7 @@ textarea {
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
-	font-family: 'Proxima Nova', 'Arial', sans-serif;
+	font-family: 'proxima-nova', 'Arial', sans-serif;
 }
 
 h1,
@@ -127,12 +113,12 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-family: 'Proxima Nova', 'Arial', sans-serif;
+	font-family: 'proxima-nova', 'Arial', sans-serif;
 }
 
 p {
 	margin-bottom: 1.5em;
-	font-family: 'Skolar', 'Georgia', serif;
+	font-family: 'skolar', 'Georgia', serif;
 	line-height: 1.3;
 }
 
@@ -334,7 +320,8 @@ X.X Page
 #outer-wrap {
 	max-width: 960px;
 	margin: auto;
-	background: #F9F9F9;;
+	background: #F9F9F9 ;
+	background-size: 128px 128px;
 }
 
 .site-content {
@@ -344,6 +331,7 @@ X.X Page
 }
 
 .section-inner {
+	position: relative;
 	padding: 24px 30px;
 }
 
@@ -512,6 +500,7 @@ nav ul li a {
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a {
+	color: #000;
 }
 
 .secondary-navigation {
@@ -552,7 +541,7 @@ nav ul li a {
 
 .footer-navigation li {
 	list-style: none;
-	float: left;
+	float: right;
 	margin-left: 10px;
 }
 
@@ -568,46 +557,6 @@ nav ul li a {
 #efca-logo {
 	width: 80px;
 }
-
-
-
-/* Small menu. */
-/*.menu-toggle {
-	display: none;
-}
-
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
-		display: none;
-	}
-}
-
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}*/
 
 /*--------------------------------------------------------------
 X.x Hero
@@ -668,13 +617,19 @@ X.X details node
 
 .detail-text {
 	display: inline-block;
-	float: left;
 	width: 100%;
-	margin-left: 1em;
 }
 
 .detail-img + .detail-text {
+	float: left;
 	width: 80%;
+	margin-left: 1em;
+}
+
+.section-inner h2 {
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: .8em;
 }
 
 .detail-gallery {
@@ -687,12 +642,30 @@ X.X details node
 	border-radius: 0;
 }
 
+#about {
+	background: #92111D;
+	color: #FFF;
+}
+
+#about .single-detail {
+	border: none;
+}
+
 /*--------------------------------------------------------------
 12.0 Subscribe
 --------------------------------------------------------------*/
+.close {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 5px 15px 0 0;
+	cursor: pointer;
+}
+
 .subscribe {
 	margin: auto;
-	background: url('../img/lines-red.png') #92101D no-repeat;
+	background: #92111D;
+	background-size: 960px;
 	color: white;
 	text-align: center;
 }
@@ -722,7 +695,7 @@ X.X details node
 
 .mc-field-group input {
 	width: 100%;
-	background: transparent;
+	background: rgb(146, 17, 29);
 	color: #FFF;
 	padding: .8em .5em ;
 	border: 1px solid #FFF;
@@ -765,13 +738,10 @@ x.x ICONS AND ICON TABS
 }
 
 .icons svg {
+	display: block;
+	width: 80%;
 	max-height: 97px;
-	margin: 10px;
-}
-
-.icons {
-	
-	
+	margin: 10px auto;
 }
 
 .icons li:hover {
@@ -954,7 +924,7 @@ x.x ICONS AND ICON TABS
 }
 
 /*--------------------------------------------------------------
-12.0 Media
+12.0 Experience Content
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -971,6 +941,23 @@ iframe,
 object {
 	max-width: 100%;
 }
+
+.media_node {
+	display: inline-block;
+	float: left;
+	width: 40%;
+	margin: 35px;
+}
+
+@media only screen and (max-width : 760px) {
+	.media_node {
+	width: 100%;
+	margin: 0;
+}
+
+}
+
+
 
 /*--------------------------------------------------------------
 12.1 Captions
@@ -1228,6 +1215,11 @@ X.X Media Queries
 .icons .active {
 	padding: 5px;
 	background: rgb(237, 237, 237);
+}
+
+.detail-img {
+	width: 100%;
+	margin: auto;
 }
 
 .site-footer .section-left {

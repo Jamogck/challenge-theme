@@ -13,8 +13,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="<?php bloginfo( 'site_description' ); ?>">
 
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/apple-touch-icon.png">
 <!-- Place favicon.ico in the root directory -->
+
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 
 <script src="//use.typekit.net/eai6zsz.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
@@ -52,6 +54,10 @@
                             <li><a href="http://instagram.com/EFCAchallenge">
                                     <i class="fa fa-instagram"></i>
                                 </a>
+                            </li>
+                            <li><a href="https://vimeo.com/groups/challenge16">
+                                <i class="fa fa-vimeo-square"></i>
+                            </a>
                             </li>
                             <li><a href="http://fb.com/EFCAchallenge">
                                     <i class="fa fa-facebook"></i>

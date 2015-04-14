@@ -28,39 +28,6 @@ get_header(); ?>
     </div>
 </section>
 
- <!-- Subscribe node -->
-<section class="subscribe">
-    <div class="section-inner group">
-        <h3>Stay Informed</h3>
-        <div id="mc-embed-signup">
-            <form class="group">
-                <div class="jvFloat mc-field-group">
-                    <span class="placeHolder">Name</span>
-                    <input type="text" value="" name="FNAME" class="labelFloat" id="mce-FNAME" placeholder="Your Name">
-                </div>
-
-                <div class="jvFloat mc-field-group">
-                    <span class="placeHolder">Email</span>
-                    <input type="email" value="" name="EMAIL" class="required email labelFloat" id="mce-EMAIL" placeholder="Email Address">
-                </div>
-
-                <div id="mce-responses">
-                    <div class="response" id="mce-error-response" style="display:none"></div>
-                    <div class="response" id="mce-success-response" style="display:none"></div>
-                </div> 
-
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;"><input type="text" name="b_6f5e5465f865eb3c9921a4aad_e349f1a24f" tabindex="-1" value=""></div>
-
-                <div class="jvFloat mc-field-group">
-                    <span class="placeHolder">Submit</span>
-                    <input class="submit-btn" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
-
 <!-- About Challenge -->
 <section class="intro">
     <div class="section-inner">
@@ -136,10 +103,12 @@ get_header(); ?>
 <section class="media">
                 <div class="section-inner">
                     <h3>Check it out</h3>
+                    <?php the_field('section_text'); ?>
                     <div class="video-container">
-                        <?php the_field('video_block'); ?>
+                        <a href="#"><img src="<?php the_field('video_placeholder'); ?>"></a>
+                       
                     </div>
-                    <h4><a href="#">Check out more videos</a></h4>
+                    <h4><a target="_blank" href="https://vimeo.com/groups/challenge16">Check out more videos</a></h4>
                 </div>
             </section>
 

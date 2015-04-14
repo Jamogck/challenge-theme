@@ -7,36 +7,29 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-			<?php the_field('featured_media'); ?>
-
 			<div class="section-inner">
+				<div class="featured-media">
+					<?php the_field('featured_media'); ?>
+				</div>
 
-				<?php if ( have_posts() ) : ?>
+				<?php if( have_rows('media_node') ): ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+				<div class="experience-content group">
 
-						<?php
-							/* Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							 */
-							get_template_part( 'content', get_post_format() );
+					<?php while( have_rows('media_node') ): the_row();
+						$media_title   = get_sub_field('media_title');
+						$media_content = get_sub_field('media_content');
 						?>
 
+						<div class="media_node">
+							<h3><?php echo $media_title; ?></h3>
+							<?php echo $media_content; ?>
+						</div>
 					<?php endwhile; ?>
-
-					<?php the_posts_navigation(); ?>
-
-				<?php else : ?>
-
-					<?php get_template_part( 'content', 'none' ); ?>
+				</div>
 
 				<?php endif; ?>
-
 			</div>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

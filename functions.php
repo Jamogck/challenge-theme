@@ -101,37 +101,41 @@ add_action( 'widgets_init', 'challenge_conference_theme_widgets_init' );
  */
 function challenge_conference_theme_scripts() {
 
-	wp_enqueue_style( 'challenge-normalize', get_template_directory_uri() . '/css/normalize.css', false);
-
-	wp_enqueue_style( 'challenge-boilerplate-base-styles', get_template_directory_uri() . '/css/main.css', false);
-
-	wp_enqueue_style( 'challenge-font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+	// wp_enqueue_style( 'challenge-normalize', get_template_directory_uri() . '/css/normalize.css', false);
 
 	wp_enqueue_style( 'challenge-conference-theme-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'challenge-modernizr', get_template_directory_uri() . '/js/vendor/modernizr-2.8.3.min.js', true);
+	wp_enqueue_style( 'challenge-base-styles', get_template_directory_uri() . '/css/main.css', false);
 
-	// wp_enqueue_script( 'challenge-conference-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_style( 'challenge-font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
 
-	wp_enqueue_script( 'challenge-conference-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'challenge-utility-js', get_template_directory_uri() . '/js/min/utility-min.js', array( 'jquery' ), true);
 
-	wp_enqueue_script( 'challenge-jvfloat', get_template_directory_uri() . '/js/jvfloat.min.js', array( 'jquery' ), true);
+	wp_enqueue_script( 'challenge-home-js', get_template_directory_uri() . '/js/min/home-min.js', array( 'jquery' ), true);
 
-	wp_enqueue_script( 'challenge-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array( 'jquery' ), true);
-
-	wp_enqueue_script( 'challenge-one-page-nav', get_template_directory_uri() . '/js/jquery.nav.js', array( 'jquery' ), true);
-
-	wp_enqueue_script( 'challenge-stickyNav', get_template_directory_uri() . '/js/jquery.sticky-kit.min.js', array( 'jquery' ), true);
-
-	wp_enqueue_script( 'challenge-app-js', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), true);
-
-	wp_enqueue_script( 'challenge-mc-validator' , 'http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js' );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	// 	wp_enqueue_script( 'comment-reply' );
+	// }
 }
+
+function challenge_home_scripts() {
+
+	wp_enqueue_script( 'challenge-home-js', get_template_directory_uri() . '/js/min/home-min.js', array( 'jquery' ), true);
+
+}
+
+// function challenge_home_scripts() {
+
+// 	wp_enqueue_script( 'challenge-details-js', get_template_directory_uri() . '/js/min/details-min.js', array( 'jquery' ), true);
+// }
+
 add_action( 'wp_enqueue_scripts', 'challenge_conference_theme_scripts' );
+
+if(is_front_page() ) {
+	add_action('wp_enqueue_scripts', 'challenge_home_scripts');
+};
+
+// if(is_page( 'Details' ) ) add_action('wp_enqueue_scripts', 'challenge_details_scripts');
 
 /**
  * Implement the Custom Header feature.

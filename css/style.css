@@ -317,6 +317,7 @@ X.X Page
 }
 
 .section-inner {
+	position: relative;
 	padding: 24px 30px;
 }
 
@@ -660,6 +661,12 @@ X.X details node
 /*--------------------------------------------------------------
 12.0 Subscribe
 --------------------------------------------------------------*/
+.close {
+	position: absolute;
+	top: 5px;
+	right: 15px;
+}
+
 .subscribe {
 	margin: auto;
 	background: url('../img/lines-red.png') #92101D no-repeat;

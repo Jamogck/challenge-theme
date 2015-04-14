@@ -15,9 +15,9 @@
             <div class="section-right">
                 <nav class="footer-navigation">
                     <ul class="group" role="navigation">
-                        <li><a href="#">Volunteer</a></li>
-                        <li><a href="#">Downloads</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <!-- <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Downloads</a></li> -->
+                        <li><a href="mailto:reachstudents@efca.org">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="social-links">
@@ -28,6 +28,10 @@
                         </li>
                         <li><a href="http://instagram.com/EFCAchallenge">
                                 <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li><a href="https://vimeo.com/groups/challenge16">
+                                <i class="fa fa-vimeo-square"></i>
                             </a>
                         </li>
                         <li><a href="http://fb.com/EFCAchallenge">
