@@ -228,13 +228,6 @@ td {
 }
 
 /*--------------------------------------------------------------
-5.0 Header
---------------------------------------------------------------*/
-#masthead .section-inner {
-  padding: 24px 0px 24px 30px;
-}
-
-/*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
 a {
@@ -1075,23 +1068,23 @@ Freebie template
   padding: 2em;
 }
 
+.freebie_body {
+  padding: 2em;
+}
+
 .freebie_subscribe {
   width: 100%;
-  max-width: 500px;
 }
 
 .freebie_subscribe input[type="button" i], .freebie_subscribe input[type="submit" i] {
   width: 100%;
   background-color: #FFF;
   -webkit-appearance: initial;
-}
-
-.freebie_subscribe input[type="email"] {
-  display: inline-block;
-  width: 100%;
   padding: 8px 4px;
-  font-size: .8em;
-  text-transform: uppercase;
+  cursor: pointer;
+  background: #92111d;
+  background-image: linear-gradient(to top left, #92111D, #E82C2E);
+  color: #FFF;
 }
 
 .freebie_copy h2 {
@@ -1099,13 +1092,80 @@ Freebie template
   font-weight: 900;
 }
 
-.freebie_btn {
-
-}
-
 .freebie_body {
   max-width: 800px;
   margin: 4em auto;
+}
+
+#form {
+  border: solid 1px #ef3b3a;
+}
+
+.freebie_subscribe label {
+  display: block;
+  padding: .5em;
+}
+
+.freebie_subscribe input {
+  display: inline-block;
+  width: 100%;
+  
+  padding: 8px 4px;
+  font-size: .8em;
+  text-transform: uppercase;
+
+  border-width: none;
+  border-style: none;
+}
+
+
+.freebie_subscribe input:not([type="submit"]) {
+  border-bottom: solid 1px #ef3b3a;
+}
+
+.freebie_subscribe input:not([type="submit"]):focus {
+  outline: none;
+  background-color: yellow;
+}
+
+.freebie_subscribe .mc-field-group:focus-within {
+  outline: none;
+  background-color: yellow;
+}
+
+.feebie_subscribe input[type="submit"] {
+  padding: 8px 4px;
+  cursor: pointer;
+  background: #92111d;
+  background-image: linear-gradient(to top left, #92111D, #E82C2E);
+  color: #FFF;
+}
+
+.mc-field-group {
+  width: 100%;
+}
+
+.field-group_1of2 {
+  width: 100%;
+  display: flex;
+}
+
+.field-group_1of2 > .mc-field-group:first-of-type {
+  border-right: 1px solid #ef3b3a;
+}
+
+@media screen and (max-width: 680px) {
+  .freebie_header {
+    display: block;
+  }
+
+  .freebie_artwork {
+    width: 100%;
+  }
+
+  .freebie_copy {
+    width: 100%;
+  }
 }
 
 /*--------------------------------------------------------------
