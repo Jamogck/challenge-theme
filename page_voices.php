@@ -14,8 +14,12 @@ get_header(); ?>
             
     <?php if( have_rows('the_speakers') ): ?>
     <div class="section-inner">
-        <div class="detail-node">
+        <?php while ( have_posts() ) : the_post(); ?>
 
+            <?php the_content(); ?>
+
+        <?php endwhile; // end of the loop. ?>
+        <div class="detail-node">
             <?php while( have_rows('the_speakers') ): the_row();
                 $speaker_name = get_sub_field('speaker_name');
                 $twitter      = get_sub_field('speaker_twitter');
