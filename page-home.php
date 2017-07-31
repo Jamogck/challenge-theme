@@ -103,14 +103,14 @@ get_header(); ?>
 </section>
 
 <section class="media">
-                <div class="section-inner">
-                    <h3>Check it out</h3>
-                    <?php the_field('section_text'); ?>
-                    <div class="video-container">
-                       <?php the_field('video_block'); ?>
-                    </div>
-                    <h4><a target="_blank" href="https://vimeo.com/album/3630384">Check out more videos</a></h4>
-                </div>
-            </section>
+    <div class="section-inner">
+        <h3>Check it out</h3>
+        <?php the_field('section_text'); ?>
+        <div class="video-container">
+           <?php the_field('video_block'); ?>
+        </div>
+        <h4><a target="_blank" href="https://vimeo.com/album/3630384">Check out more videos</a></h4>
+    </div>
+</section>
 
 <?php get_footer(); ?>

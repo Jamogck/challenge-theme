@@ -32,8 +32,7 @@ get_header(); ?>
 
     <nav id="nav" class="secondary-navigation">
         <ul class="group" role="navigation">
-            <!-- <li><a href="#theme">Theme</a></li> -->
-            <!-- <li><a href="#speakers">Voices</a></li> -->
+            <li><a href="#about">Registration</a></li>
             <li><a href="#schedule">Schedule</a></li>
             <li><a href="#afternoons">Afternoons</a></li>
         </ul>
@@ -50,57 +49,6 @@ get_header(); ?>
         </div>
     </section>
 
-   <!--  <section id="theme">
-        <div class="section-inner">
-            <h2>Theme</h2>
-    </div>
-    <img src="<?php the_field( 'theme_image' ); ?>" alt="Live Sent">
-    <div class="section-inner">
-            <div class="detail-node">
-                <div class="single-detail group">
-                    <h3><?php the_field( 'theme_title' ); ?></h3>
-                    <?php the_field( 'theme_content' ); ?>
-                </div>
-            </div>
-        </div>
-    
-    </section> -->
-
-    <!-- <section id="speakers">
-        <div class="section-inner">
-            <h2>Speakers &amp; Artists</h2>
-                
-            <?php if( have_rows('speaker_node') ): ?>
-
-                <div class="detail-node">
-
-                    <?php while( have_rows('speaker_node') ): the_row();
-                        $speaker_name = get_sub_field('speaker_name');
-                        $twitter      = get_sub_field('speaker_twitter');
-                        $speaker_bio  = get_sub_field('speaker_bio');
-                        $image        = get_sub_field('headshot');
-                        ?>
-
-                        <div class="single-detail group">
-                            <div class="detail-img">
-                                <img class="circle" src="<?php echo $image ;?>" alt="<?php echo $speaker_name; ?>">
-                            </div>
-                            <div class="detail-text">
-                                <h3><?php echo $speaker_name . " "; ?><a href="http://twitter.com/<?php echo $twitter; ?>"><i class="fa fa-twitter"></i></a></h3>
-                                
-                                <?php echo $speaker_bio; ?>
-
-                            </div>
-                        </div>
-
-                    <?php endwhile; ?>
-
-                </div>
-
-            <?php endif; ?>
-        </div>
-    </section> -->
-
          <section id="schedule">
         <div class="section-inner">
             <h2>Schedule</h2>
@@ -116,58 +64,56 @@ get_header(); ?>
                                     <th colspan="2">Tues-Fri</th>
                                 </tr>
                                 <tr alt="7-9:00 a.m.">
-                                    <td>7-9:00 a.m.</td>
-                                    <td rowspan="6" class="na"></td>
-                                    <td>Breakfast</td>
+                                    <td>7-9 a.m.</td>
+                                    <td rowspan="5" class="na"></td>
+                                    <td>Breakfast (included with registration)</td>
                                 </tr>
                                 <tr alt="8:30 a.m. Monday &amp; Wednesday">
                                     <td>8:30 a.m.</td>
                                     <td>Youth Worker Update (Monday &amp; Wednesday)</td>
-                                </tr>
-                                <tr alt="9:00 a.m. Thursday">
-                                    <td>9:00 a.m.</td>
-                                    <td>Gathering &amp; Super Huddle (Thursday)</td>
                                 </tr>
                                 <tr alt="9:30 a.m.">
                                     <td>9:30 a.m.</td>
                                     <td>Morning Gathering</td>
                                 </tr>
                                 <tr alt="11:00 a.m.">
-                                    <td>11:00 a.m.</td>
+                                    <td>11 a.m.</td>
                                     <td>The Huddle (time to meet with just your group)</td>
                                 </tr>
                                 <tr alt="11:00 a.m.-1:00 p.m.">
-                                    <td>11:00 a.m.-1:00 p.m.</td>
-                                    <td>Lunch</td>
+                                    <td>11 a.m.-1 p.m.</td>
+                                    <td>Lunch (included with registration)</td>
                                 </tr>
                                 <tr alt="1:00 p.m.-5:00 p.m.">
-                                    <td>1:00 p.m.-5:00 p.m.</td>
+                                    <td>1 p.m.-5 p.m.</td>
                                     <td>Registration</td>
-                                    <td rowspan="2"><strong>Afternoon Options</strong><br>
+                                    <td><strong>Afternoon Options</strong><br>
                                     - Outreach</br>
                                     - Equipping Labs</br>
                                     - Rec Sports </br>
-                                    - Love Moves </br>
+                                    - Apex Experience </br>
+                                    - Trinity International University lounge </br>
                                     - Free Time</td>
-                                </tr>
-                                <tr alt="5:30 p.m.">
-                                    <td>5:30 p.m.</td>
-                                    <td rowspan="2">Prayer Moves</td>
                                 </tr>
                                 <tr alt="4:45-6:30 p.m.">
                                     <td>4:45-6:30 p.m.</td>
-                                    <td colspan="2">Dinner</td>
+                                    <td colspan="1">Dinner (on your own)</td>
+                                    <td colspan="1">Dinner (included with registration)</td>
+                                </tr>
+                                <tr alt="5:30 p.m.">
+                                    <td>5:30 - 7 p.m.</td>
+                                    <td colspan="2">Prayer Moves</td>
                                 </tr>
                                 <tr alt="7:00 p.m.">
-                                    <td>7:00 p.m.</td>
+                                    <td>7 p.m.</td>
                                     <td colspan="2">Evening Gathering</td>
                                 </tr>
                                 <tr alt="9:00-9:45 p.m.">
-                                    <td>9:00-9:45 p.m.</td>
+                                    <td>9-9:45 p.m.</td>
                                     <td colspan="2">The Huddle</td>
                                 </tr>
                                 <tr alt="9:45-11:00 p.m.">
-                                    <td>9:45-11:00 p.m.</td>
+                                    <td>9:45-11 p.m.</td>
                                     <td colspan="2">Evening Options</td>
                                 </tr>
                                 <tr alt="11:30 p.m.">
@@ -251,10 +197,10 @@ get_header(); ?>
 
                 <div class="single-detail group">
                     <div class="detail-text">
-                        <h3>Love Moves</h3>
-                        <?php the_field('love_moves_content'); ?>
-                
-                        <?php if( have_rows('love_moves_button') ): ?>
+                        <h3>Apex Experience</h3>
+                        <?php the_field('apex_experience_content'); ?>
+
+                        <?php if( have_rows('apex_experience_button') ): ?>
 
                             <?php while( have_rows('love_moves_button') ): the_row();
                                 $button_label = get_sub_field('button_label');
