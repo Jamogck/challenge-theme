@@ -214,6 +214,25 @@ get_header(); ?>
                      </div>
                 </div>
 
+                <div class="single-detail group">
+                    <div class="detail-text">
+                        <h3>Trinity International University</h3>
+                        <?php the_field('tiu_content'); ?>
+
+                        <?php if( have_rows('tiu_button') ): ?>
+
+                            <?php while( have_rows('tiu_button') ): the_row();
+                                $button_label = get_sub_field('button_label');
+                                $button_url     = get_sub_field('button_url');
+                            ?>
+
+                            <a class="btn" href="<?php echo $button_url; ?>"><?php echo $button_label; ?></a>
+
+                            <?php endwhile; ?>
+                            <?php endif; ?>
+                     </div>
+                </div>
+
             </div>
         </div>
     </section>
