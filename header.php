@@ -47,6 +47,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+    <div class="modal-screen"></div>
     <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'challenge-conference-theme' ); ?></a>
         <div class="slide-out">

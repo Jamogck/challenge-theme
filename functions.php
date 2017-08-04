@@ -116,6 +116,7 @@ function challenge_conference_theme_scripts() {
 	wp_enqueue_script( 'challenge-nav-js', get_template_directory_uri() . '/js/jquery.nav.js', array( 'jquery' ), true);
 
 	wp_enqueue_script( 'challenge-stickyKit-js', get_template_directory_uri() . '/js/jquery.sticky-kit.min.js', array( 'jquery' ), true);
+	wp_enqueue_script( 'challenge-hamburger-js', get_template_directory_uri() . '/js/jquery.vimeo.api.min.js', array('jquery'), true);
 
 	wp_enqueue_script( 'challenge-app-js', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), true);
 
@@ -773,117 +774,6 @@ acf_add_local_field_group(array (
 ));
 
 acf_add_local_field_group(array (
-	'key' => 'group_55143c848be36',
-	'title' => 'Experience Page',
-	'fields' => array (
-		array (
-			'key' => 'field_55143c885e04f',
-			'label' => 'Featured Media',
-			'name' => 'featured_media',
-			'type' => 'oembed',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'width' => '',
-			'height' => '',
-		),
-		array (
-			'key' => 'field_551d74aa64533',
-			'label' => 'Media Node',
-			'name' => 'media_node',
-			'type' => 'repeater',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'min' => 0,
-			'max' => 0,
-			'layout' => 'table',
-			'button_label' => 'Add Row',
-			'sub_fields' => array (
-				array (
-					'key' => 'field_551d754497e01',
-					'label' => 'Media Title',
-					'name' => 'media_title',
-					'type' => 'text',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'maxlength' => '',
-					'readonly' => 0,
-					'disabled' => 0,
-				),
-				array (
-					'key' => 'field_551d74bd64534',
-					'label' => 'Media Content',
-					'name' => 'media_content',
-					'type' => 'wysiwyg',
-					'instructions' => 'Could be a quote or embed code from twitter, youtube, vimeo, etc. Post embed codes while in text view.',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '',
-					'tabs' => 'all',
-					'toolbar' => 'full',
-					'media_upload' => 1,
-					'delay' => 0,
-				),
-			),
-			'collapsed' => '',
-		),
-	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'page',
-				'operator' => '==',
-				'value' => '25',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => array (
-		0 => 'the_content',
-		1 => 'excerpt',
-		2 => 'custom_fields',
-		3 => 'discussion',
-		4 => 'comments',
-		5 => 'author',
-		6 => 'format',
-		7 => 'categories',
-		8 => 'send-trackbacks',
-	),
-	'active' => 1,
-	'description' => '',
-));
-
-acf_add_local_field_group(array (
 	'key' => 'group_55d37b271af1b',
 	'title' => 'FAQ',
 	'fields' => array (
@@ -1173,7 +1063,7 @@ acf_add_local_field_group(array (
 			'key' => 'field_551d82e7d0b52',
 			'label' => 'Section Text',
 			'name' => 'section_text',
-			'type' => 'textarea',
+			'type' => 'text',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
@@ -1184,11 +1074,9 @@ acf_add_local_field_group(array (
 			),
 			'default_value' => '',
 			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
 			'maxlength' => '',
-			'rows' => '',
-			'new_lines' => 'wpautop',
-			'readonly' => 0,
-			'disabled' => 0,
 		),
 		array (
 			'key' => 'field_551029c8e9fb2',
@@ -1207,11 +1095,11 @@ acf_add_local_field_group(array (
 			'height' => '',
 		),
 		array (
-			'key' => 'field_552c277c63204',
-			'label' => 'Video Placeholder',
-			'name' => 'video_placeholder',
+			'key' => 'field_598486f5b5144',
+			'label' => 'Theme Art',
+			'name' => 'theme_art',
 			'type' => 'image',
-			'instructions' => 'Upload video placeholder image.',
+			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
@@ -1220,7 +1108,7 @@ acf_add_local_field_group(array (
 				'id' => '',
 			),
 			'return_format' => 'url',
-			'preview_size' => 'full',
+			'preview_size' => 'thumbnail',
 			'library' => 'all',
 			'min_width' => '',
 			'min_height' => '',
@@ -1229,6 +1117,25 @@ acf_add_local_field_group(array (
 			'max_height' => '',
 			'max_size' => '',
 			'mime_types' => '',
+		),
+		array (
+			'key' => 'field_59848703b5145',
+			'label' => 'Theme Copy',
+			'name' => 'theme_copy',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => '',
 		),
 	),
 	'location' => array (

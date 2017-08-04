@@ -20,13 +20,28 @@ get_header(); ?>
 }
 
 </style>
-
+<div class="modal">
+    <span id="close-modal">
+        <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 84 64 64" enable-background="new 0 84 64 64" xml:space="preserve">
+        <path id="Plus_1_" d="M48.7,134.8l2.9-2.9c1.4-1.4,1.5-1.8,0-3.3L38.9,116l12.6-12.6c1.4-1.4,1.4-1.9,0-3.3l-2.9-2.9
+            c-1.5-1.5-2.4-1.9-3.8-0.5l-12.6,12.6L19.1,96.2c-1.4-1.4-2.4-1.9-3.8-0.5l-2.9,2.9c-1.5,1.5-1.4,2.9,0,4.3L25.6,116l-13.1,13.1
+            c-1.4,1.4-1.4,2.8,0,4.3l2.9,2.9c1.4,1.4,2.3,1,3.8-0.5l13.1-13.1l12.6,12.6C46.3,136.7,47.2,136.2,48.7,134.8L48.7,134.8z"/>
+        </svg>
+    </span>
+    <div class="video-container">
+        <?php the_field('video_block'); ?>
+    </div>
+</div>
 <section id="hero">
     <div class="inner-hero group">
         <div class="hero-copy">
             <h2>Kansas City, Missouri</h2>
             <h3>July 2-6, 2018</h3>
         </div>
+    </div>
+    <div class="video-trigger">
+        <span><?php the_field('section_text'); ?></span>
     </div>
 </section>
 
@@ -102,15 +117,22 @@ get_header(); ?>
     </div>
 </section>
 
-<section class="media">
+<section class="theme">
     <div class="section-inner">
-        <h3>Check it out</h3>
-        <?php the_field('section_text'); ?>
-        <div class="video-container">
-           <?php the_field('video_block'); ?>
-        </div>
-        <h4><a target="_blank" href="https://vimeo.com/album/3630384">Check out more videos</a></h4>
+        <h3>2018 Theme</h3>
+    </div>
+    <div class="featured">
+        <img src="https://www.experiencechallenge.org/wp-content/uploads/2017/07/Bold_Moves_theme_web_large_1200.jpg">
+    </div>
+    <div class="section-inner">
+        <p>This generation of young people have a desire to bring change into the world coupled with the belief they have the capacity to do it. The problem is they lack a white hot why that is bigger than themselves or the shifting cultural fads of our day.
+
+        <p>The good news is the movement of all movements – the one Jesus started –  spans across all time, cultures and generations. His movement is in no way losing steam. But, to bring about any eternal good and lasting change this generation needs to reset their eyes on the founder of the movement. They must be captured with the founder of the movement and his vision for their part in it today.
+
+<p>At Challenge 2018, we will call students to see Jesus and to walk in the steps of his Bold Moves. We will call students to kneel to the authority of Jesus in a world where self has become the ultimate authority. We equip students to courageously stand for truth in a world that encourages them to be their own truth. We challenge youth to compassionately walk alongside others inviting them to surrender to Christ. Finally, we will ask students to lay down their lives to live for that which they cannot lose.
     </div>
 </section>
+
+
 
 <?php get_footer(); ?>

@@ -1,8 +1,24 @@
 jQuery(document).ready(function($) {
 
-/* Scroll then sticky side nav */
+// homepage video trigger
+$('.video-trigger').click(function(e){
+    e.preventDefault();
+    $('body').addClass('modal-is-showing');
+    $('.modal').addClass('is-showing');
+    $('.video-container > iframe').vimeo('play');
+    ;
+});
 
-// $(".slide-out").stick_in_parent();
+function closeModal() {
+    $('#close-modal').click(function(e){
+        e.preventDefault();
+        $('body').removeClass('modal-is-showing');
+        $('.modal').removeClass('is-showing');
+        $('.video-container > iframe').vimeo('pause');
+    });
+}
+
+closeModal();
 
 /* Motive Tabs
 - display first tab content on load
